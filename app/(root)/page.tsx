@@ -9,7 +9,11 @@ export default async function Home({
   searchParams: Promise<{ query: string }>;
 }) {
   const query = (await searchParams).query;
-  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY });
+  const params = { search: query || null };
+  const { data: posts } = await sanityFetch({
+    query: STARTUPS_QUERY,
+    params: { search: query || null },
+  });
 
   return (
     <>
@@ -26,7 +30,7 @@ export default async function Home({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for ${query}` : "All Startups"}
+          {query ? `Search results for "${query}"` : "All Startups"}
         </p>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
