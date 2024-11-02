@@ -9,26 +9,32 @@ export const author = defineType({
   fields: [
     defineField({
       name: "id",
-      type: "number",
+      title: "ID",
+      type: "string",
     }),
     defineField({
       name: "name",
+      title: "Name",
       type: "string",
     }),
     defineField({
       name: "username",
+      title: "Username",
       type: "string",
     }),
     defineField({
       name: "email",
+      title: "Email",
       type: "string",
     }),
     defineField({
       name: "image",
+      title: "Image",
       type: "url",
     }),
     defineField({
       name: "bio",
+      title: "Bio",
       type: "text",
     }),
   ],

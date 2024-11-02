@@ -158,7 +158,7 @@ export type Author = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  id?: number;
+  id?: string;
   name?: string;
   username?: string;
   email?: string;
@@ -236,10 +236,10 @@ export type STARTUP_VIEWS_QUERYResult = {
   views: number | null;
 } | null;
 // Variable: AUTHOR_BY_GITHUB_ID_QUERY
-// Query: *[_type == "author" && id == $id][0]{    __id, id, name, username, email, image, bio  }
+// Query: *[_type == "author" && id == $id][0]{    _id, id, name, username, email, image, bio  }
 export type AUTHOR_BY_GITHUB_ID_QUERYResult = {
-  __id: null;
-  id: number | null;
+  _id: string;
+  id: string | null;
   name: string | null;
   username: string | null;
   email: string | null;
@@ -254,6 +254,6 @@ declare module "@sanity/client" {
     "*[_type == \"startup\" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search ] | order(_createdAt desc){\n  _id, \n  title, \n  slug, \n  _createdAt, \n  author -> {_id, name, image, bio}, \n  views, \n  description, \n  category, \n  image\n}": STARTUPS_QUERYResult;
     "*[_type == \"startup\" && _id == $id][0]{\n  _id,\n    title,\n    slug,\n    _createdAt,\n    author -> {\n      _id, name, username, image, bio\n    },\n    views,\n    description,\n    category,\n    image,\n    pitch\n}": STARTUP_BY_ID_QUERYResult;
     "\n  *[_type == 'startup' && _id == $id][0]{\n    _id, views\n  }": STARTUP_VIEWS_QUERYResult;
-    "\n  *[_type == \"author\" && id == $id][0]{\n    __id, id, name, username, email, image, bio\n  }": AUTHOR_BY_GITHUB_ID_QUERYResult;
+    "\n  *[_type == \"author\" && id == $id][0]{\n    _id, id, name, username, email, image, bio\n  }": AUTHOR_BY_GITHUB_ID_QUERYResult;
   }
 }

@@ -1,15 +1,19 @@
 "use client";
 
 import { useState, useActionState } from "react";
+import MDEditor from "@uiw/react-md-editor";
+import { useRouter } from "next/navigation";
+import { z } from "zod";
+
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import MDEditor from "@uiw/react-md-editor";
 import { Button } from "./ui/button";
+
 import { Send } from "lucide-react";
+
 import { formSchema } from "@/lib/validation";
-import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
+import { createPitch } from "@/lib/actions";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -29,20 +33,20 @@ const StartupForm = () => {
 
       await formSchema.parseAsync(formValues);
       console.log("form values", formValues);
-      // const result = await createDiffieHellman(prveState, formData, pitch);
+      const result = await createPitch(prevState, formData, pitch);
 
-      // console.log(result);
+      console.log(result);
 
-      //   if (result.status === "SUCCESS") {
-      //     toast({
-      //       title: "Success",
-      //       description: "Startup pitch has been created successfully",
-      //     });
+      if (result.status === "SUCCESS") {
+        toast({
+          title: "Success",
+          description: "Startup pitch has been created successfully",
+        });
 
-      //     router.push(`/startup/${result.id}`);
-      //   }
+        router.push(`/startup/${result._id}`);
+      }
 
-      //   return result;
+      return result;
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors = error.flatten().fieldErrors;
