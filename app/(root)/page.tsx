@@ -10,9 +10,9 @@ export default async function Home({
   searchParams: Promise<{ query: string }>;
 }) {
   const query = (await searchParams).query;
-  const params = { search: query || null };
+  // const params = { search: query || null };
 
-  const session = await auth();
+  // const session = await auth();
 
   const { data: posts } = await sanityFetch({
     query: STARTUPS_QUERY,
@@ -38,7 +38,7 @@ export default async function Home({
         </p>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
-            posts.map((post: any) => (
+            posts.map((post) => (
               <StartupCard key={post?._id} post={post as StartupTypeCard} />
             ))
           ) : (
