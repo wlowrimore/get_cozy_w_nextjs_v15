@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  esLint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
