@@ -1,40 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YC Find
+
+YC Find is a Next.js application that allows users to create / search for startups and view their details. It uses the Sanity.io Content Studio to manage the data and the Next.js framework to build the application.
+
+## Technologies Used
+
+- Next.js v15
+- React v19
+- Tailwind CSS v3
+- Sanity.io Content Studio
+- Sentry
+- Vercel
+- Shadcn
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 16.x
+- NPM 8.x
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/wlowrimore/get_cozy_w_nextjs_v15.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a new Sanity.io account and create a new project.
+
+4. Create a new Sanity.io token and add it to the .env file.
+
+5. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contributions are welcome! If you find a bug or have a suggestion, please open an issue or submit a pull request.
 
-## Learn More
+## Authors
 
-To learn more about Next.js, take a look at the following resources:
+- [William Lowrimore](https://github.com/wlowrimore)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you have any questions or need help, please contact me at [wlowrimore@gmail.com](mailto:wlowrimore@gmail.com).
 
-## Deploy on Vercel
+## Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [YC Find](https://get-cozy-w-nextjs-v15.vercel.app/user/92553989)
+- [YC Find - GitHub](https://github.com/wlowrimore/get_cozy_w_nextjs_v15)
+- [William Lowrimore - Portfolio](https://williamlowrimore.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# get_cozy_w_nextjs_v15
-# get_cozy_w_nextjs_v15
-# get_cozy_w_nextjs_v15
-# get_cozy_w_nextjs_v15
+<img src='public/screen-shots/homepage.png' alt='YC Find - Homepage' width='100%' />
+
+## License
+
+This project is licensed under the MIT License.
